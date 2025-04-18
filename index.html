@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildranking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <button class="header-button back-button">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <h1 id="rankingTitle">Ranking #1</h1>
+            <button class="header-button add-button" id="addImageBtn">
+                <i class="fas fa-plus"></i>
+            </button>
+        </header>
+
+        <main class="ranking-container" id="rankingContainer">
+            <!-- Cards will be added here -->
+        </main>
+
+        <!-- Upload Modal -->
+        <div class="modal" id="uploadModal">
+            <div class="modal-content">
+                <h2>Lägg till bild</h2>
+                <form id="uploadForm">
+                    <div class="form-group">
+                        <label for="imageInput">Välj bild</label>
+                        <input type="file" id="imageInput" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="titleInput">Rubrik</label>
+                        <input type="text" id="titleInput" placeholder="Ange rubrik..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descriptionInput">Beskrivning (valfri)</label>
+                        <textarea id="descriptionInput" placeholder="Ange beskrivning..."></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="cancel-button" id="cancelUpload">Avbryt</button>
+                        <button type="submit" class="submit-button">Lägg till</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

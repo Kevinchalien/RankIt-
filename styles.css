@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #2B2347 0%, #4B2B68 100%);
+    min-height: 100vh;
+    color: white;
+}
+
+.app-container {
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.header-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Ranking Container */
+.ranking-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* Card Styles */
+.ranking-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    touch-action: none;
+}
+
+.ranking-number {
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.card-content {
+    display: flex;
+    margin-left: 60px;
+    flex: 1;
+    padding: 15px;
+}
+
+.card-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-text {
+    flex: 1;
+    padding-left: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+/* Menu Styles */
+.menu-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #2B2347;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.submit-button {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Dragging States */
+.ranking-card.dragging {
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.upload-section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#uploadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#uploadForm input[type="file"],
+#uploadForm input[type="text"],
+#uploadForm button {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
+#uploadForm input[type="file"] {
+    padding: 8px;
+}
+
+#uploadForm button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#uploadForm button:hover {
+    background-color: #45a049;
+}
+
+.images-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.image-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: move;
+    transition: transform 0.2s, box-shadow 0.2s;
+    touch-action: none;
+}
+
+.image-card:active {
+    transform: scale(0.98);
+}
+
+.image-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.image-card p {
+    padding: 12px;
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.image-card.dragging {
+    opacity: 0.5;
+    transform: scale(1.02);
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+
+    .images-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #uploadForm {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #uploadForm input[type="file"] {
+        width: auto;
+    }
+
+    #uploadForm input[type="text"] {
+        flex: 1;
+    }
+
+    #uploadForm button {
+        width: auto;
+        margin-top: 0;
+    }
+}
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+    .images-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+} 

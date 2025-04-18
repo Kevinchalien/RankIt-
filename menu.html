@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank IT!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Rank IT!</h1>
+            <button class="header-button add-button" id="addRankingBtn">
+                <i class="fas fa-plus"></i>
+            </button>
+        </header>
+
+        <main class="menu-container" id="menuContainer">
+            <!-- Rankings will be added here -->
+        </main>
+
+        <!-- New Ranking Modal -->
+        <div class="modal" id="newRankingModal">
+            <div class="modal-content">
+                <h2>Ny rankning</h2>
+                <form id="newRankingForm">
+                    <div class="form-group">
+                        <label for="rankingTitle">Titel</label>
+                        <input type="text" id="rankingTitleInput" placeholder="Ange titel..." required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="cancel-button" id="cancelNewRanking">Avbryt</button>
+                        <button type="submit" class="submit-button">Skapa</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="menu.js"></script>
+</body>
+</html> 
