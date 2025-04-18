@@ -19,9 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     cancelUpload.addEventListener('click', () => {
+        closeUploadModal();
+    });
+
+    // Close modal when clicking outside
+    uploadModal.addEventListener('click', (e) => {
+        if (e.target === uploadModal) {
+            closeUploadModal();
+        }
+    });
+
+    function closeUploadModal() {
         uploadModal.classList.remove('active');
         uploadForm.reset();
-    });
+    }
 
     // Back button
     backButton.addEventListener('click', () => {
@@ -47,8 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
                 addCard(imageData);
                 saveRanking();
-                uploadModal.classList.remove('active');
-                uploadForm.reset();
+                closeUploadModal();
             };
             reader.readAsDataURL(file);
         }

@@ -14,9 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     cancelNewRanking.addEventListener('click', () => {
+        closeNewRankingModal();
+    });
+
+    // Close modal when clicking outside
+    newRankingModal.addEventListener('click', (e) => {
+        if (e.target === newRankingModal) {
+            closeNewRankingModal();
+        }
+    });
+
+    function closeNewRankingModal() {
         newRankingModal.classList.remove('active');
         newRankingForm.reset();
-    });
+    }
 
     // Handle new ranking creation
     newRankingForm.addEventListener('submit', (e) => {
@@ -26,8 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (title) {
             const rankingId = Date.now().toString();
             createRanking(rankingId, title);
-            newRankingModal.classList.remove('active');
-            newRankingForm.reset();
+            closeNewRankingModal();
         }
     });
 
