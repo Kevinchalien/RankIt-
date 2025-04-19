@@ -34,32 +34,32 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 24px;
     background: rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
-    min-height: 70px;
+    min-height: 100px;
 }
 
 .header-button {
     background: none;
     border: none;
     color: white;
-    font-size: 28px;
+    font-size: 32px;
     cursor: pointer;
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
     -webkit-tap-highlight-color: transparent;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    border-radius: 16px;
 }
 
 .app-header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
     color: white;
 }
 
@@ -267,7 +267,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    max-height: 85vh;
+    max-height: 40vh;
     transform: translateY(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
@@ -450,14 +450,18 @@ body {
     }
 
     .header-button {
-        width: 44px;
-        height: 44px;
+        width: 48px;
+        height: 48px;
         font-size: 24px;
     }
 
     .app-header {
-        min-height: 60px;
-        padding: 16px;
+        min-height: 80px;
+        padding: 20px;
+    }
+
+    .app-header h1 {
+        font-size: 24px;
     }
 }
 
