@@ -20,22 +20,37 @@
             <!-- Rankings will be added here -->
         </main>
 
-        <!-- New Ranking Modal -->
+        <!-- New/Edit Ranking Modal -->
         <div class="modal" id="newRankingModal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Ny rankning</h2>
+                    <h2 id="rankingModalTitle">Ny rankning</h2>
                 </div>
                 <form id="newRankingForm">
+                    <input type="hidden" id="editRankingId">
                     <div class="form-group">
-                        <label for="rankingTitle">Titel</label>
+                        <label for="rankingTitleInput">Titel</label>
                         <input type="text" id="rankingTitleInput" placeholder="Ange titel..." required>
                     </div>
                     <div class="form-buttons">
-                        <button type="submit" class="submit-button">Skapa</button>
+                        <button type="submit" class="submit-button">Spara</button>
                         <button type="button" class="cancel-button" id="cancelNewRanking">Avbryt</button>
                     </div>
                 </form>
+            </div>
+        </div>
+
+        <!-- Delete Confirmation Modal -->
+        <div class="modal" id="deleteRankingModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Radera rankning</h2>
+                </div>
+                <p class="modal-message">Är du säker på att du vill radera denna rankning?</p>
+                <div class="form-buttons">
+                    <button class="delete-button" id="confirmDeleteRanking">Radera</button>
+                    <button class="cancel-button" id="cancelDeleteRanking">Avbryt</button>
+                </div>
             </div>
         </div>
     </div>

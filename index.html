@@ -23,17 +23,18 @@
             <!-- Cards will be added here -->
         </main>
 
-        <!-- Upload Modal -->
+        <!-- Upload/Edit Modal -->
         <div class="modal" id="uploadModal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>Lägg till bild</h2>
+                    <h2 id="modalTitle">Lägg till bild</h2>
                 </div>
                 <form id="uploadForm">
+                    <input type="hidden" id="editItemId">
                     <div class="form-group">
                         <label for="imageInput">Välj bild</label>
                         <div class="file-input-wrapper">
-                            <input type="file" id="imageInput" accept="image/*" required>
+                            <input type="file" id="imageInput" accept="image/*">
                         </div>
                     </div>
                     <div class="form-group">
@@ -44,11 +45,30 @@
                         <label for="descriptionInput">Beskrivning (valfri)</label>
                         <textarea id="descriptionInput" placeholder="Ange beskrivning..."></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="urlInput">Länk (valfri)</label>
+                        <input type="url" id="urlInput" placeholder="https://..." pattern="https?://.+">
+                        <small class="input-help">Börja med http:// eller https://</small>
+                    </div>
                     <div class="form-buttons">
-                        <button type="submit" class="submit-button">Lägg till</button>
+                        <button type="submit" class="submit-button">Spara</button>
                         <button type="button" class="cancel-button" id="cancelUpload">Avbryt</button>
                     </div>
                 </form>
+            </div>
+        </div>
+
+        <!-- Delete Confirmation Modal -->
+        <div class="modal" id="deleteModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Radera kort</h2>
+                </div>
+                <p class="modal-message">Är du säker på att du vill radera detta kort?</p>
+                <div class="form-buttons">
+                    <button class="delete-button" id="confirmDelete">Radera</button>
+                    <button class="cancel-button" id="cancelDelete">Avbryt</button>
+                </div>
             </div>
         </div>
     </div>

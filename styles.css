@@ -34,29 +34,32 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
+    padding: 20px;
     background: rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 1;
+    min-height: 70px;
 }
 
 .header-button {
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
     -webkit-tap-highlight-color: transparent;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
 }
 
 .app-header h1 {
     margin: 0;
-    font-size: 20px;
+    font-size: 24px;
     color: white;
 }
 
@@ -97,6 +100,7 @@ body {
     margin-left: 60px;
     flex: 1;
     padding: 15px;
+    position: relative;
 }
 
 .card-image {
@@ -109,6 +113,8 @@ body {
 .card-text {
     flex: 1;
     padding-left: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-title {
@@ -121,6 +127,87 @@ body {
     font-size: 14px;
     opacity: 0.8;
     line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.read-more-button {
+    align-self: flex-start;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s;
+    margin-top: auto;
+}
+
+.read-more-button:hover {
+    background-color: #1976D2;
+}
+
+.read-more-button i {
+    font-size: 12px;
+}
+
+.input-help {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.form-group input[type="url"] {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+}
+
+.form-group input[type="url"]:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+.card-actions {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 12px;
+}
+
+.action-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: opacity 0.2s;
+    font-size: 18px;
+}
+
+.action-button:active {
+    opacity: 0.8;
+}
+
+.edit-button {
+    background-color: #FFC107;
+}
+
+.delete-button {
+    background-color: #DC3545;
 }
 
 /* Menu Styles */
@@ -130,6 +217,26 @@ body {
     padding: 20px;
     margin-bottom: 15px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.menu-item .item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-message {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
 }
 
 /* Modal Styles */
@@ -241,16 +348,17 @@ body {
 .form-buttons {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     margin-top: 24px;
+    padding: 0 10px;
 }
 
 .form-buttons button {
     width: 100%;
-    padding: 16px;
+    padding: 18px;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 12px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     transition: opacity 0.2s;
@@ -267,7 +375,7 @@ body {
 }
 
 .cancel-button {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     color: white;
 }
 
@@ -317,10 +425,22 @@ body {
 
     .form-buttons {
         flex-direction: row;
+        padding: 0;
     }
 
     .submit-button {
         order: 0;
+    }
+
+    .header-button {
+        width: 44px;
+        height: 44px;
+        font-size: 24px;
+    }
+
+    .app-header {
+        min-height: 60px;
+        padding: 16px;
     }
 }
 
