@@ -157,8 +157,9 @@ body {
 .input-help {
     display: block;
     color: rgba(255, 255, 255, 0.6);
-    font-size: 12px;
-    margin-top: 4px;
+    font-size: 14px;
+    margin-top: 6px;
+    padding: 0 2px;
 }
 
 .form-group input[type="url"] {
@@ -233,10 +234,11 @@ body {
 }
 
 .modal-message {
-    color: white;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px 16px;
     font-size: 16px;
+    color: white;
+    line-height: 1.4;
 }
 
 /* Modal Styles */
@@ -269,6 +271,9 @@ body {
     transform: translateY(100%);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .modal.active .modal-content {
@@ -276,7 +281,9 @@ body {
 }
 
 .modal-header {
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 24px;
     text-align: center;
     position: relative;
 }
@@ -284,13 +291,15 @@ body {
 .modal-header h2 {
     font-size: 20px;
     margin: 0;
-    padding: 0 40px;
+    padding: 0;
+    line-height: 1.4;
 }
 
 /* Form Styles */
 .form-group {
-    margin-bottom: 20px;
-    padding: 0 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 24px;
 }
 
 .form-group label {
@@ -300,12 +309,30 @@ body {
     color: rgba(255, 255, 255, 0.9);
 }
 
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="url"],
+.file-input-wrapper {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
 .file-input-wrapper {
     position: relative;
     width: 100%;
-    height: 44px;
+    height: 48px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
@@ -327,44 +354,35 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 12px;
+    padding: 14px;
     pointer-events: none;
     color: white;
 }
 
-.form-group input[type="text"],
-.form-group textarea,
-.form-group input[type="url"] {
-    width: 100%;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    color: white;
-    font-size: 16px;
-}
-
-.form-group textarea {
-    height: 100px;
-    resize: none;
-}
-
 .form-buttons {
+    width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin: 24px 10px;
+    margin: 24px 0;
+    padding-bottom: env(safe-area-inset-bottom, 16px);
 }
 
 .form-buttons button {
     width: 100%;
-    padding: 16px;
+    min-height: 52px;
+    padding: 14px 24px;
     border: none;
     border-radius: 12px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: opacity 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .submit-button {
@@ -375,6 +393,11 @@ body {
 
 .cancel-button {
     background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.delete-button {
+    background: #DC3545;
     color: white;
 }
 
@@ -408,36 +431,18 @@ body {
     }
 }
 
-/* Tablet and Desktop Styles */
+/* Tablet and Desktop Styles - keeping full width */
 @media (min-width: 768px) {
-    .modal {
-        display: none;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .modal.active {
-        display: flex;
-    }
-
-    .modal-content {
-        position: relative;
-        width: 90%;
-        max-width: 500px;
-        margin: auto;
-        border-radius: 20px;
-        transform: translateY(20px);
-        max-height: 80vh;
-    }
-
     .form-group,
     .form-buttons {
-        padding: 0;
+        padding: 0 20px;
         margin: 20px 0;
     }
 
     .form-buttons {
         flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
     }
 
     .submit-button {
@@ -477,10 +482,12 @@ h1 {
     margin-bottom: 20px;
 }
 
-#uploadForm {
+#uploadForm,
+#newRankingForm {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
 }
 
 #uploadForm input[type="file"],
