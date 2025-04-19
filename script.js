@@ -331,4 +331,41 @@ document.addEventListener('DOMContentLoaded', () => {
             ranking.items.forEach(item => addCard(item));
         }
     }
+
+    // Add touch handling for bottom sheet
+    let sheetStartY = 0;
+    let sheetCurrentY = 0;
+    let sheetInitialY = 0;
+
+    uploadModal.addEventListener('touchstart', (e) => {
+        if (e.target === uploadModal) {
+            sheetStartY = e.touches[0].clientY;
+            sheetInitialY = uploadModal.querySelector('.modal-content').getBoundingClientRect().top;
+        }
+    });
+
+    uploadModal.addEventListener('touchmove', (e) => {
+        if (e.target === uploadModal) {
+            sheetCurrentY = e.touches[0].clientY;
+            const deltaY = sheetCurrentY - sheetStartY;
+            const content = uploadModal.querySelector('.modal-content');
+            
+            if (deltaY > 0) {
+                content.style.transform = `translateY(${deltaY}px)`;
+            }
+        }
+    });
+
+    uploadModal.addEventListener('touchend', (e) => {
+        if (e.target === uploadModal) {
+            const content = uploadModal.querySelector('.modal-content');
+            const deltaY = sheetCurrentY - sheetStartY;
+            
+            if (deltaY > 100) {
+                closeUploadModal();
+            } else {
+                content.style.transform = '';
+            }
+        }
+    });
 }); 
